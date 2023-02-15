@@ -23,16 +23,16 @@ def multiply(a, b):
 
 def evaluate(x, y, z):
     if z == 1:
-        result_fin = add(x, y)        
+        res = add(x, y)
+        return res
     elif z == 2:
-        result_fin = substract(x, y)
+        res = substract(x, y)
+        return res
     elif z == 3:
-        result_fin = divide(x, y)
+        res = divide(x, y)
+        return res
     elif z == 4:
-        result_fin = multiply(x, y)
-    return result_fin
+        res = multiply(x, y)
+        return res
 
-
-multiply(1,2)
-
-
+evaluate(2, 4, 4)

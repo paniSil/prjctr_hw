@@ -5,4 +5,4 @@ z = input('Choose an operation (1, 2, 3, 4) ')
 x = input('Enter first number ')
 y = input('Enter second number ')
 
-evaluate(x, y, z)
+print(evaluate(x, y, z))
