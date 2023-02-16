@@ -35,4 +35,4 @@ def evaluate(x, y, z):
         res = multiply(x, y)
         return res
 
-evaluate(2, 4, 4)
+print(evaluate(2, 4, 4))
