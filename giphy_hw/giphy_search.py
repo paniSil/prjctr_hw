@@ -2,7 +2,7 @@ import requests
 import json
 import random
 
-api_key = 'YGy9BBs3D3qRjpKDNRy9saodTzUGRdhU'
+api_key = 'key goes here'
 
 search_word = input('Give me a word to star the search ')
 
