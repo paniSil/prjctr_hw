@@ -28,7 +28,7 @@ class Car(Base):
     reg_number = Column('registration number', String)
     model = Column('model', String)
     rented_by = Column('rented by company', Integer,
-                       ForeignKey('companies.name'))
+                       ForeignKey('companies.company_id'))
 
     def __init__(self, car_id, reg_number, model, rented_by):
         self.car_id = car_id
@@ -52,10 +52,10 @@ company2 = Company(2, 'Moria Mining Company', 'Khazad-dûm, Middle-earth')
 company3 = Company(3, 'Planet Express', '1600 Coney Island Avenue, Brooklyn, NY 11230, USA')
 company4 = Company(4, 'Liubava', '03058, місто Київ, ВУЛИЦЯ БОРЩАГІВСЬКА')
 
-car1 = Car(1, '136113966', 'DMC DeLorean', company2.name)
-car2 = Car(2, 'ECTO-1', '1959 Cadillac Miller-Meteor Sentinel', company4.name)
-car3 = Car(3, 'MAX 079', '1972 HQ Holden Monaro', company1.name)
-car4 = Car(4, 'RHS 113', 'Quartz Regalia 723', company4.name)
+car1 = Car(1, '136113966', 'DMC DeLorean', company2.company_id)
+car2 = Car(2, 'ECTO-1', '1959 Cadillac Miller-Meteor Sentinel', company4.company_id)
+car3 = Car(3, 'MAX 079', '1972 HQ Holden Monaro', company1.company_id)
+car4 = Car(4, 'RHS 113', 'Quartz Regalia 723', company4.company_id)
 
 session.add(company1)
 session.add(company2)
@@ -70,7 +70,7 @@ session.add(car4)
 session.commit()
 
 liubava_cars = []
-results = session.query(Car).filter(Car.rented_by == 'Liubava').all()
+results = session.query(Car).filter(Car.rented_by == company4.company_id).all()
 for r in results:
     liubava_cars.append(r)
 
