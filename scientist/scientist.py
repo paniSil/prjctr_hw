@@ -16,7 +16,7 @@ x = np.arange(-10, 11)
 f_xe = math.e**(-x)
 
 # Import the dataset
-data = pd.read_csv(r'Euro_2012.csv')
+data = pd.read_csv(r'scientist/Euro_2012.csv')
 
 # Select only the Team, Yellow Cards and Red Cards columns.
 data_c = data.loc[:, ['Team', 'Yellow Cards', 'Red Cards']]
