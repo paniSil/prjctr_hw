@@ -48,7 +48,7 @@ class Menu:
 class Account:
     def __init__(self, number: int, balance: float):
         self.number = number
-        self.balance = float
+        self.balance = balance
     
     def deposit(self, amount: float):
         self.balance += amount
@@ -63,7 +63,7 @@ class Account:
         return f'{self.number}:{self.balance}'
 
 class SavingsAccount(Account):
-    def __init__(self, number: int, balance: float, interest_rate: float)
+    def __init__(self, number: int, balance: float, interest_rate: float):
         super().__init__(number, balance)
         self.interest_rate = interest_rate
 
@@ -74,8 +74,9 @@ class SavingsAccount(Account):
     def __str__(self):
         return f'{self.number}:{self.balance} with {self.interest_rate} interest'
 
+
 class CurrentAccount(Account):
-    def __init__(self, number: str, balance: float, overdraft: float)
+    def __init__(self, number: str, balance: float, overdraft: float):
         super().__init__(number, balance)
         self.overdraft = overdraft
 
@@ -107,10 +108,10 @@ class Bank:
 
     def upd(self):
         for account in self.accounts:
-            if isinstance (account, SavingsAccount):
-                account.add_interest
-            if isinstance (account, CurrentAccount) and account.balance < 0:
-                print (f'Your account {account.number} is in overdraft of {account.overdraft}')
+            if isinstance(account, SavingsAccount):
+                account.add_interest()
+            if isinstance(account, CurrentAccount) and account.balance < 0:
+                print(f'Your account {account.number} is within overdraft of {account.overdraft}')
 
     def pay_dividend(self, dividend):
         for account in self.accounts:
