@@ -21,7 +21,7 @@ def test_bank_upd():
     bank.open_account(account_test_3)
     bank.upd()
     assert account_test_2.balance == 1000 + 1000 * 1.5 / 100, 'account_test_2 balance should be 1015.0'
-    assert account_test_3.balance == -500.0, 'account_test_3 balance should be -500'
+    assert account_test_3.balance == -500.0 and account_test_3.balance > -2000, 'account_test_3 balance should be -500'
 
 
 test_bank_upd()
